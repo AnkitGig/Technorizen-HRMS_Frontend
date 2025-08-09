@@ -1,90 +1,115 @@
-
 import React from "react";
 
 const MyAttendance = () => {
-	return (
-		<div style={{ background: '#f8fafc', minHeight: '100vh', padding: '24px' }}>
-			{/* Header */}
-			<div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-				<div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-					<div style={{
-						border: '1.5px solid #e5e7eb',
-						borderRadius: 12,
-						width: 40,
-						height: 40,
-						display: 'flex',
-						alignItems: 'center',
-						justifyContent: 'center',
-						background: '#fff',
-					}}>
-						<svg width="24" height="24" fill="none" stroke="#0e1726" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-					</div>
-					<div>
-						<h1 style={{ fontWeight: 700, fontSize: 32, margin: 0 }}>My Attendance</h1>
-						<div style={{ color: '#64748b', fontSize: 15, marginTop: 2 }}>
-							Obsessed with ideas, driven by growth, and always trying to leave things better than I found them.
-						</div>
-					</div>
-				</div>
-				<div style={{ marginLeft: 'auto' }}>
-					<div style={{
-						background: '#fff',
-						border: '1.5px solid #e5e7eb',
-						borderRadius: 8,
-						padding: '6px 18px',
-						fontSize: 15,
-						color: '#334155',
-					}}>
-						1 Jan, 2025 - 31 Jan, 2025
-					</div>
-				</div>
-			</div>
+  return (
+    <div className="bg-slate-50 min-h-screen p-6">
+      {/* Header */}
+      <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
+        <div className="flex items-center gap-3">
+          <div className="border border-slate-200 rounded-xl w-12 h-12 flex items-center justify-center bg-white shadow-sm">
+            <svg
+              width="24"
+              height="24"
+              fill="none"
+              stroke="#0e1726"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              viewBox="0 0 24 24"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <path d="M16 2v4M8 2v4M3 10h18" />
+            </svg>
+          </div>
+          <div>
+            <h1 className="font-bold text-3xl text-slate-900">
+              My Attendance
+            </h1>
+            <p className="text-slate-500 text-sm mt-1 max-w-xl">
+              Obsessed with ideas, driven by growth, and always trying to leave
+              things better than I found them.
+            </p>
+          </div>
+        </div>
+        <div className="ml-auto">
+          <div className="bg-white border border-slate-200 rounded-lg px-4 py-1.5 text-slate-700 text-sm shadow-sm">
+            1 Jan, 2025 - 31 Jan, 2025
+          </div>
+        </div>
+      </div>
 
-			{/* Card */}
-			<div style={{ background: '#fff', borderRadius: 16, marginTop: 32, padding: 32, boxShadow: '0 2px 8px #0001', border: '1.5px solid #e5e7eb' }}>
-				<div style={{ fontWeight: 700, fontSize: 28, marginBottom: 24 }}>My Attendance</div>
-				<div style={{ position: 'relative' }}>
-					{/* Table */}
-					<table style={{ width: '100%', borderCollapse: 'separate', borderSpacing: 0, background: '#f8fafc', borderRadius: 12, overflow: 'hidden' }}>
-						<thead style={{ background: '#f1f5f9' }}>
-							<tr style={{ textAlign: 'left', color: '#0e1726', fontWeight: 600, fontSize: 16 }}>
-								<th style={{ padding: '16px 20px' }}>Month <span style={{ fontSize: 14 }}>▼</span></th>
-								<th style={{ padding: '16px 20px' }}>Total days <span style={{ fontSize: 14 }}>▼</span></th>
-								<th style={{ padding: '16px 20px' }}>Leaves <span style={{ fontSize: 14 }}>▼</span></th>
-								<th style={{ padding: '16px 20px' }}>Status <span style={{ fontSize: 14 }}>▼</span></th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr style={{ background: '#fff', fontSize: 16, color: '#0e1726' }}>
-								<td style={{ padding: '16px 20px' }}>Jan</td>
-								<td style={{ padding: '16px 20px' }}>31</td>
-								<td style={{ padding: '16px 20px' }}>0</td>
-								<td style={{ padding: '16px 20px' }}>
-									<span style={{ background: '#d1fae5', color: '#059669', borderRadius: 16, padding: '4px 18px', fontWeight: 600, fontSize: 15 }}>Active</span>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					{/* Search icon */}
-					<div style={{ position: 'absolute', top: 12, right: 16 }}>
-						<svg width="22" height="22" fill="none" stroke="#0e1726" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-					</div>
-				</div>
-				{/* Pagination */}
-				<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 18, color: '#64748b', fontSize: 15 }}>
-					<div>1-10 of 200 items per page</div>
-					<div style={{ display: 'flex', gap: 8 }}>
-						<button style={{ border: '1.5px solid #e5e7eb', background: '#fff', borderRadius: 8, width: 36, height: 36, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
-							<span style={{ fontSize: 22, color: '#64748b' }}>‹</span>
-						</button>
-						<button style={{ border: '1.5px solid #e5e7eb', background: '#fff', borderRadius: 8, width: 36, height: 36, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
-							<span style={{ fontSize: 22, color: '#64748b' }}>›</span>
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+      {/* Card */}
+      <div className="bg-white rounded-2xl mt-8 p-6 md:p-8 shadow-md border border-slate-200">
+        <h2 className="font-bold text-2xl mb-6 text-slate-900">
+          My Attendance
+        </h2>
+
+        <div className="relative overflow-x-auto">
+          {/* Table */}
+          <table className="w-full text-left bg-slate-50 rounded-xl overflow-hidden">
+            <thead className="bg-slate-100 text-slate-900 text-sm font-semibold">
+              <tr>
+                <th className="px-5 py-3">
+                  Month <span className="text-xs">▼</span>
+                </th>
+                <th className="px-5 py-3">
+                  Total days <span className="text-xs">▼</span>
+                </th>
+                <th className="px-5 py-3">
+                  Leaves <span className="text-xs">▼</span>
+                </th>
+                <th className="px-5 py-3">
+                  Status <span className="text-xs">▼</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="bg-white text-slate-900 text-sm hover:bg-slate-50 transition">
+                <td className="px-5 py-3">Jan</td>
+                <td className="px-5 py-3">31</td>
+                <td className="px-5 py-3">0</td>
+                <td className="px-5 py-3">
+                  <span className="bg-emerald-100 text-emerald-700 rounded-full px-4 py-1 font-semibold text-xs">
+                    Active
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          {/* Search Icon */}
+          <div className="absolute top-3 right-4">
+            <svg
+              width="20"
+              height="20"
+              fill="none"
+              stroke="#0e1726"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <path d="M21 21l-4.35-4.35" />
+            </svg>
+          </div>
+        </div>
+
+        {/* Pagination */}
+        <div className="flex flex-col md:flex-row items-center justify-between mt-6 text-slate-500 text-sm gap-3">
+          <div>1-10 of 200 items per page</div>
+          <div className="flex gap-2">
+            <button className="border border-slate-200 bg-white rounded-lg w-9 h-9 flex items-center justify-center hover:bg-slate-100 transition">
+              <span className="text-lg text-slate-500">‹</span>
+            </button>
+            <button className="border border-slate-200 bg-white rounded-lg w-9 h-9 flex items-center justify-center hover:bg-slate-100 transition">
+              <span className="text-lg text-slate-500">›</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default MyAttendance;

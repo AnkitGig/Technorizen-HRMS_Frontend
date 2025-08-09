@@ -29,11 +29,20 @@ export default function AttendanceSummary() {
     fetchData();
   }, []);
 
-  // Calculate stats
-  const presentCount = attendance.filter(a => a.checkIn && a.checkOut).length;
-  const halfDayCount = attendance.filter(a => a.checkIn && !a.checkOut).length;
-  const leaveCount = leave.length;
-  const totalDays = attendance.length;
+  // Filter attendance for current month
+  const now = new Date();
+  const currentMonth = now.getMonth();
+  const currentYear = now.getFullYear();
+  const attendanceThisMonth = attendance.filter(a => {
+    if (!a.date) return false;
+    const d = new Date(a.date);
+    return d.getMonth() === currentMonth && d.getFullYear() === currentYear;
+  });
+
+  const presentCount = attendanceThisMonth.filter(a => a.checkIn && a.checkOut).length;
+  const halfDayCount = attendanceThisMonth.filter(a => a.checkIn && !a.checkOut).length;
+  const leaveCount = leave.length; // Optionally filter leave for current month as well
+  const totalDays = attendanceThisMonth.length;
 
   const stats = [
     { label: "Present", value: presentCount, color: "text-green-600", bgColor: "bg-green-50" },
